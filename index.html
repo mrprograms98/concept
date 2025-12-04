@@ -32,10 +32,11 @@
       padding: 0;
       font-family: 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       color:var(--text);
+      overflow-x: hidden;
       background:
     radial-gradient(1400px 700px at 8% 12%, rgba(168,146,201,0.18), transparent 6%), /* paarse radial sterker */
     radial-gradient(1000px 500px at 92% 86%, rgba(197,154,68,0.08), transparent 6%), /* gouden radial sterker */
-    #f0e8f5; /* var(--bg) iets donkerder dan #fffafc */
+    #f0e8f5; /* var(--bg);
 
 
       -webkit-font-smoothing:antialiased;
@@ -54,32 +55,48 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #f7f5ef; /* licht beige / off-white */
+    background: #f7f5ef; 
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     z-index: 999999;
     opacity: 1;
     transition: opacity 0.8s ease;
 }
 
-.preloader-content {
-    text-align: center;
-    animation: fadeIn 1.2s ease forwards;
-}
-
+/* Langzamere pulse animatie */
 .preloader img {
     width: 180px;
     height: auto;
     margin-bottom: 20px;
-    animation: pulse 2s infinite ease-in-out;
+    animation: pulse 4s infinite ease-in-out; /* was 2s → nu 4s */
 }
+
+/* Langzamere fade-in */
+.preloader-content {
+    animation: fadeIn 2.2s ease forwards; /* was 1.2s → nu 2.2s */
+}
+
+/* Fade-out langzamer en zachter */
+.preloader.fade-out {
+    opacity: 0;
+    transition: opacity 2.2s ease; /* was 1s → nu 2.2s */
+}
+
+/* Pulse animatie zelf ook rustiger */
+@keyframes pulse {
+    0%   { transform: scale(1);   opacity: 0.8; }
+    50%  { transform: scale(1.06); opacity: 1; }
+    100% { transform: scale(1);   opacity: 0.8; }
+}
+
 
 .preloader h2 {
     font-size: 28px;
     letter-spacing: 2px;
     font-weight: 400;
-    color: #3a3a3a;
+    color: var(--lavender-600);
 }
 
 /* Fade-in animatie */
@@ -88,16 +105,15 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Verdwijn animatie */
-.preloader.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease;
-}
+
 header {
     top: 0;
     width: 100%;
     height: 80px; /* Pas aan naar wens */
+    backdrop-filter: blur(14px);
     background: linear-gradient(to bottom, purple, rgba(128, 0, 128, 0)); /* paars naar transparant */
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
     color: white !important;
     display: flex;
     align-items: center;
@@ -167,11 +183,12 @@ nav ul li.lang a:hover {
   color: var(--lavender-600);       /* donkerder paars voor betere leesbaarheid */
   background: transparent;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 8px 16px 8px 28px;
   border-radius: 12px;
   font-weight:600;
   font-size:15px;
   transition: all var(--transition);
+  position: relative;
 }
 
 nav.primary a:hover {
@@ -183,6 +200,22 @@ nav.primary a:hover {
 nav.primary a.active {
   color: #fff;                       /* actieve link in wit */
   background: var(--lavender-600);   /* mooie gradient kan ook */
+}
+nav.primary a::before {
+  content: "✦";             /* sierlijk vierhoekig sterretje */
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--gold);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+nav.primary a:hover::before {
+  color: #fff; /* op hover wordt hij wit, mooi contrast */
+  opacity: 1;
 }
 main {
     padding-top: 80px; /* zelfde hoogte als de header */
@@ -213,7 +246,7 @@ main {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--muted);
+  background: #ffffff; /* volledig wit */
   display: flex;
   flex-direction: column;
   padding: 80px 30px;
@@ -243,11 +276,12 @@ main {
 .mobile-nav a {
   font-size: 20px;
   font-weight: 600;
-  padding: 18px 0;
+  padding: 18px 0 18px 32px ;
   color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid rgba(0,0,0,0.08);
   transition: all .25s ease;
+  position: relative;
 }
 
 .mobile-nav a:hover {
@@ -266,7 +300,22 @@ main {
   font-size: 14px;
   color: var(--muted);
 }
+.mobile-nav a::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--lavender-600);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
 
+.mobile-nav a:hover::before {
+  color: var(--gold);
+  opacity: 1;
+}
 /* hamburger duidelijk zichtbaar tijdens open */
 .hamburger[aria-expanded="true"] {
   background: rgba(168,146,201,0.18);
@@ -277,7 +326,7 @@ main {
 #navOverlay {
   position: fixed;
   inset: 0;
-  background: var(--muted);
+  background: rgba(0,0,0,0.45);
   opacity: 0;
   pointer-events: none;
   transition: opacity .25s ease;
@@ -296,22 +345,56 @@ main {
   color: var(--gold);
   z-index: 10;
 }
+.section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  height: 80%;
+  width: 4px;
+  background: linear-gradient(
+      to bottom,
+      rgba(168,146,201,0.4),
+      rgba(168,146,201,0.15),
+      rgba(168,146,201,0)
+  );
+  border-radius: 10px;
+}
 
-    /* hero */
-    .hero{min-height:66vh;display:grid;align-items:center;padding:56px 0;position:relative;overflow:visible}
-    .hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between}
-    .hero-left{flex:1;min-width:0}
-    h1{font-size:44px;margin:0;color:var(--lavender);line-height:1.05}
-    .lead{margin-top:14px;color:var(--muted);max-width:720px;font-size:16.5px}
-    .cta-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700;transition:transform var(--transition),box-shadow var(--transition);box-shadow:0 9px 28px rgba(143,120,182,0.06)}
-    .btn-primary{background:var(--accent);color:white}
-    .btn-ghost{background:transparent;border:1px solid rgba(120,100,150,0.08);color:var(--text)}
-    .btn-primary:hover{transform: translateY(-4px);box-shadow:0 20px 48px rgba(143,120,182,0.12)}
-    .btn-ghost:hover{background:var(--lavender-soft)}
+.container,
+.section-container {
+  width: 100%;
+  max-width: 1300px;       /* midden op desktop */
+  margin: 0 auto;
+  padding: 0 20px;         /* veilige ruimte links + rechts */
+}
+.card,
+.info-box,
+.contact-block,
+.feature-box {
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 auto;
+}
+  /* hero */
+  .hero{min-height:66vh;display:grid;align-items:center;padding:56px 0;position:relative;overflow:visible}
+  .hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between}
+  .hero-left{flex:1;min-width:0}
+  h1{font-size:44px;margin:0;color:var(--lavender);line-height:1.05}
+  .lead{margin-top:14px;color:var(--muted);max-width:720px;font-size:16.5px}
+  .cta-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700;transition:transform var(--transition),box-shadow var(--transition);box-shadow:0 9px 28px rgba(143,120,182,0.06)}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-ghost{background:transparent;border:1px solid rgba(120,100,150,0.08);color:var(--text)}
+  .btn-primary:hover{transform: translateY(-4px);box-shadow:0 20px 48px rgba(143,120,182,0.12)}
+  .btn-ghost:hover{background:var(--lavender-soft)}
 
-    /* cards & sections */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.78));border-radius:var(--radius);padding:20px;border: 1px solid rgba(168,146,201,0.10);
+  /* cards & sections */
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.78));border-radius:var(--radius);padding:20px;border: 1px solid rgba(168,146,201,0.10);
   
   /* nieuwe, diepere maar zachte "wellness" shadow */
   box-shadow:
@@ -363,6 +446,9 @@ section:not(:last-of-type)::after {
   overflow: hidden;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   cursor: default;
+  padding: 32px;
+  border: 1px solid rgba(168,146,201,0.12);
+  box-shadow: 0 16px 40px rgba(70,50,90,0.08);
 }
 
 .features .card:hover {
@@ -537,21 +623,19 @@ section:not(:last-of-type)::after {
 /* info lines */ 
 .info-line {
   display: flex;
-  gap: 14px;
-  margin-bottom: 18px;
-  align-items: center;
+  flex-direction: column;   /* icon boven, tekst eronder */
+  align-items: center;      /* alles in het midden */
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
 }
 
 .info-icon {
-  font-size: 20px;
+  font-size: 26px;  
   color: var(--lavender-600);
-  margin-right: 6px;
-  background: none;
-  width: auto;
-  height: auto;
-  padding: 0;
+  margin: 0 auto;
+  display: block;
 }
-
 
 .info-label {
   font-weight: 700;
@@ -560,6 +644,11 @@ section:not(:last-of-type)::after {
 
 .info-value {
   color: var(--muted);
+}
+.info-label,
+.info-value {
+  text-align: center;
+  width: 100%;
 }
 
 /* form fields */
@@ -692,73 +781,6 @@ textarea {
   color: var(--lavender-600);
 }
 
-/* ---------------------- */
-/* ✨ Footer */
-/* ---------------------- */
-.site-footer {
-  background: linear-gradient(to bottom, rgba(128, 0, 128, 0), purple); /* paars naar transparant */
-  padding: 60px 20px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-
-}
-
-.footer-title {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: var(--lavender-600);
-}
-
-.footer-subtitle {
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--lavender);
-}
-
-.footer-text {
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 8px;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 15px;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.footer-links a:hover {
-  color: var(--lavender-600);
-  transform: translateX(4px);
-}
-
-/* Bottom footer */
-.footer-bottom {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .footer-container {
@@ -838,6 +860,9 @@ textarea {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  text-align: center;
+  padding: auto;
+  margin: auto;
 }
 
 .about-image-wrapper {
@@ -880,6 +905,7 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-items: center;
 }
 
 .highlight {
@@ -951,6 +977,70 @@ textarea {
 .step-text {
   color: var(--muted);
   line-height: 1.6;
+}
+/* ✨ Footer */
+.site-footer {
+  background: linear-gradient(to bottom, rgba(128, 0, 128, 0), purple); /* paars naar transparant */
+  padding: 60px 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+}
+
+.footer-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-subtitle {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.footer-text {
+  color: #fff;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Bottom footer */
+.footer-bottom {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* Responsive */
@@ -1146,6 +1236,28 @@ textarea {
     display: none !important;   /* hamburger verbergen */
   }
 }
+@media (max-width: 768px) {
+  .container,
+  .section-container,
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .card,
+  .info-box,
+  .contact-block,
+  .feature-box {
+    padding: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .container,
+  .section-container,
+  section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
 
   </style>
 </head>
@@ -1153,7 +1265,7 @@ textarea {
 <div class="preloader">
     <div class="preloader-content">
         <img src="medium.hope.png">
-        <h2>Welkom</h2>
+        <h2 class="welcome-title">Welkom</h2>
     </div>
 </div>
   <!-- decorative -->
@@ -1172,7 +1284,7 @@ textarea {
         <ul>
           <li><a href="#Home">Home</a></li>
           <li><a href="#Over">Over</a></li>
-          <li><a href="#Diensten">Diensten</a></li>
+          <li><a href="#Werkwijze">Werkwijze</a></li>
           <li><a href="#Contact">Contact</a></li>
           <li class="lang-btn" data-lang="nl"><a href="#">NL</a></li>
           <li class="lang-btn" data-lang="de"><a href="#">DE</a></li>
@@ -1379,9 +1491,6 @@ textarea {
       </div>
     </div>
 
-    <div class="info-buttons">
-      <a href="mailto:carolina-58@hotmail.com" class="btn btn-primary">Stuur e-mail</a>
-    </div>
 
     <div style="height:20px"></div>
 
@@ -1479,7 +1588,7 @@ textarea {
 
     <!-- Over Medium.Hope -->
     <div class="footer-column">
-      <h3 class="footer-title">Medium.Hope<img src="mediumgold.png" width="100" height="100"></h3>
+      <h3 class="footer-title">Medium.Hope<img src="mediumgold.png" height="100"></h3>
       <p class="footer-text">
         Helderheid, vertrouwen en warme begeleiding. Ontdek je innerlijke rust en laat je leiden door intuïtieve inzichten.
       </p>
@@ -1627,14 +1736,19 @@ mobileLinks.forEach(a => a.addEventListener('click', ()=> toggleMobileNav(false)
 
   </script>
   <script>
-window.addEventListener("load", function() {
-    const preloader = document.querySelector(".preloader");
-    preloader.classList.add("fade-out");
+window.onload = function() {
+    const preloader = document.querySelector('.preloader');
 
+    // ⏳ Wacht 3 seconden voordat de fade-out start
     setTimeout(() => {
-    preloader.style.display = "none";
-}, 3000);
-});
+        preloader.classList.add('fade-out');
+
+        // Verwijder preloader uit DOM na fade-out
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 1200); // moet overeenkomen met jouw fade-out CSS
+    }, 3000); // 3000ms = 3 seconden zichtbare duur
+};
 </script>
 
 <script>
@@ -1677,16 +1791,3 @@ window.addEventListener('resize', () => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
