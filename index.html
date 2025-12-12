@@ -3,1288 +3,473 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Medium.Hope — Helderheid & Vertrouwen</title>
-  <meta name="description" content="Medium.Hope — readings, fotoreading en intuïtieve coaching. Warm, zuiver en hoopvol.">
-  <meta name="google-site-verification" content="_0cZbd29_1_hwaYNTv5ipKD7-D4_SAhVdp_3ny0Z4Mk" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Titel + SEO Description -->
+  <title>Medium.Hope – Readings, Coaching & Fotoreading | Helderheid & Inzichten</title>
+  <meta name="description" content="Medium.Hope (Medium-Hope) | Intuïtieve reading, fotoreading en coaching. Warm, zuiver en helder. Vind rust, antwoorden en inzichten. Medium.Hope helpt je verder.">
+  <meta name="author" content="Medium.Hope (Giovanna)">
+  <meta name="robots" content="index, follow">
+
+  <!-- Zoekwoorden waarop je gevonden wilt worden -->
+  <meta name="keywords" content="medium.hope, medium hope, medium-hope, medium readings, fotoreading, coaching, spiritueel advies, helderziende reading, medium readings Nederland">
+
+  <!-- Meertaligheid (NL + DE) -->
+  <link rel="alternate" hreflang="nl" href="https://medium-hope.nl/">
+  <link rel="alternate" hreflang="de" href="https://medium-hope.nl/de/">
+  <link rel="alternate" hreflang="x-default" href="https://medium-hope.nl/">
+
+  <!-- Open Graph voor sociale media + Google begrijpt merknaam beter -->
+  <meta property="og:title" content="Medium.Hope – Intuïtieve Readings & Coaching">
+  <meta property="og:description" content="Medium.Hope biedt intuïtieve readings, fotoreadings en coaching. Helder, warm en afgestemd op jouw energie. Vind antwoorden en inzichten.">
+  <meta property="og:url" content="https://medium-hope.nl/">
+  <meta property="og:image" content="https://medium-hope.nl/medium.hope.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+
+  <!-- Twitter / TikTok / WhatsApp Preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Medium.Hope — Intuïtieve Reading & Coaching">
+  <meta name="twitter:description" content="Liefdevolle en zuivere begeleiding via reading, fotoreading en coaching. Helderheid en inzichten voor jouw spirituele groei.">
+  <meta name="twitter:image" content="https://medium-hope.nl/mediumgold.png">
+
+  <!-- Favicon & Kleuren -->
+  <link rel="icon" type="image/png" href="https://medium-hope.nl/mediumgold.png">
+  <meta name="theme-color" content="#F2DFB4">
+  <meta name="application-name" content="Medium.Hope">
+
+  <!-- Canonical (belangrijk voor Google!) -->
+  <link rel="canonical" href="https://medium-hope.nl/">  
+
+  <!-- Structured Data (SEO BOOST) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Medium.Hope",
+    "image": "https://medium-hope.nl/mediumgold.png",
+    "description": "Intuïtieve readings, fotoreadings en coaching. Warm, zuiver en afgestemd op jouw energie.",
+    "@id": "https://medium-hope.nl",
+    "url": "https://medium-hope.nl",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Papendrecht",
+      "addressCountry": "NL"
+    },
+    "telephone": "+31-6-16827562",  
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.831",
+      "longitude": "4.691"
+    },
+    "sameAs": [
+      "https://www.tiktok.com/@medium.hope",
+      "https://wa.me/31616827562"  
+    ],
+    "serviceArea": {
+      "@type": "Place",
+      "name": "Papendrecht, Nederland"
+    }
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #fffafc;
-      --lavender: #a892c9;
-      --lavender-600: #7e62a8;
-      --lavender-soft: #f6f1fb;
-      --gold: #c59a44;
-      --text: #22202a;
-      --muted: #6b6b78;
-      --glass: rgba(255,255,255,0.66);
-      --card-shadow: 0 14px 40px rgba(80,56,92,0.06);
-      --radius: 14px;
-      --max-width: 1100px;
-      --accent: linear-gradient(90deg,#b89ad0,#a07ad0);
-      --focus: 4px rgba(168,146,201,0.18);
-      --transition: 220ms cubic-bezier(.2,.9,.2,1);
-    }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      padding: 0;
-      font-family: 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color:var(--text);
-      overflow-x: hidden;
-      background:
-    radial-gradient(1400px 700px at 8% 12%, rgba(168,146,201,0.18), transparent 6%), /* paarse radial sterker */
-    radial-gradient(1000px 500px at 92% 86%, rgba(197,154,68,0.08), transparent 6%), /* gouden radial sterker */
-    #f0e8f5; /* var(--bg);
-
-
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.65;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* layout */
-    .container{max-width:var(--max-width);margin:0 auto;padding:28px align-items:center;}
-
-    /* PRELOADER */
-    .preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #f7f5ef; 
-      display: flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      z-index: 999999;
-      opacity: 1;
-      transition: opacity 0.8s ease;
-    }
-
-    /* Langzamere pulse animatie */
-    .preloader img {
-      width: 180px;
-      height: auto;
-      margin-bottom: 20px;
-      animation: pulse 4s infinite ease-in-out; /* was 2s → nu 4s */
-    }
-
-    /* Langzamere fade-in */
-    .preloader-content {
-      animation: fadeIn 2.2s ease forwards; /* was 1.2s → nu 2.2s */
-    }
-
-    /* Fade-out langzamer en zachter */
-    .preloader.fade-out {
-      opacity: 0;
-      transition: opacity 2.2s ease; /* was 1s → nu 2.2s */
-    }
-
-    /* Pulse animatie zelf ook rustiger */
-    @keyframes pulse {
-      0%   { transform: scale(1);   opacity: 0.8; }
-      50%  { transform: scale(1.06); opacity: 1; }
-      100% { transform: scale(1);   opacity: 0.8; }
-    }
-
-    .preloader h2 {
-      font-size: 28px;
-      letter-spacing: 2px;
-      font-weight: 400;
-      color: var(--lavender-600);
-    }
-
-    /* Fade-in animatie */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    } 
-
-
-    header {
-      top: 0;
-      width: 100%;
-      height: 80px; /* Pas aan naar wens */
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, purple, rgba(128, 0, 128, 0)); /* paars naar transparant */
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
-      border-bottom: none;
-      color: white !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      z-index: 999;
-    }
-
-    header a:hover {
-      color: #fff;
-    }
-
-    .nav-inner {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between; /* LOGO LINKS – MENU RECHTS */
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    .logo img {
-      max-width: 150px;
-      height: auto;
-      margin-top: 40px;
-    }
-      nav ul {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      list-style-type: none;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      font-size: 16px;
-      padding: 6px 10px;
-    }
-
-    nav ul li.lang a {
-      background: #eee;
-      border: 1px solid #ccc;
-      padding: 4px 10px;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-
-    nav ul li.lang a:hover {
-      background: #ddd;
-      border-color: #bbb;
-    }
-
-
-    header.scrolled{box-shadow:0 10px 40px rgba(40,30,60,0.06)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .tagline{font-size:13px;color:var(--muted);line-height:1}
-
-    /* desktop nav */
-    nav.primary{display:flex;gap:18px;align-items:center}
-    nav.primary a {
-  color: var(--lavender-600);       /* donkerder paars voor betere leesbaarheid */
-  background: transparent;
-  text-decoration: none;
-  padding: 8px 16px 8px 28px;
-  border-radius: 12px;
-  font-weight:600;
-  font-size:15px;
-  transition: all var(--transition);
-  position: relative;
-}
-
-nav.primary a:hover {
-  background: var(--lavender-600);  /* donkerder paars achtergrond */
-  color: white;                      /* witte tekst voor contrast */
-  box-shadow: 0 4px 12px rgba(125,82,160,0.2);
-}
-
-nav.primary a.active {
-  color: #fff;                       /* actieve link in wit */
-  background: var(--lavender-600);   /* mooie gradient kan ook */
-}
-nav.primary a::before {
-  content: "✦";             /* sierlijk vierhoekig sterretje */
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: var(--gold);
-  opacity: 0.7;
-  transition: 0.3s ease;
-}
-
-nav.primary a:hover::before {
-  color: #fff; /* op hover wordt hij wit, mooi contrast */
-  opacity: 1;
-}
-main {
-    padding-top: 80px; /* zelfde hoogte als de header */
-}
-
-/* hamburger */
-.hamburger{
-      display:none;
-      background:transparent;border:0;padding:8px;border-radius:10px;cursor:pointer;position:relative;
-      -webkit-tap-highlight-color: transparent;
-      transition: background var(--transition);
-    }
-    /* visible pill behind bars (for contrast) */
-    .hamburger .pill{
-      position:absolute;inset:0;border-radius:12px;background:transparent;transition:background var(--transition),box-shadow var(--transition);box-shadow: 0 4px 18px rgba(0,0,0,0.15);
-    }
-
-    .hamburger .bars{position:relative;display:inline-block;padding:6px 10px}
-    .hamburger .bar{display:block;width:20px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:transform var(--transition),opacity var(--transition),background var(--transition)}
-    /* open state */
-
-    
-    .hamburger[aria-expanded="true"] .bar:nth-child(3){ transform: translateY(-6px) rotate(-45deg); background:var(--lavender-600)}
-  
-
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff; /* volledig wit */
-  display: flex;
-  flex-direction: column;
-  padding: 80px 30px;
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: opacity .25s ease, transform .25s ease;
-  z-index: 998; /* onder hamburger */
-}
-
-.mobile-nav.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* hamburger knop altijd boven menu */
-.hamburger {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999; /* boven alles */
-  cursor: pointer;
-}
-
-/* opties zoals in header */
-.mobile-nav a {
-  font-size: 20px;
-  font-weight: 600;
-  padding: 18px 0 18px 32px ;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  transition: all .25s ease;
-  position: relative;
-}
-
-.mobile-nav a:hover {
-  background: var(--lavender-soft);
-  color: var(--lavender-600);
-  padding-left: 8px;
-}
-
-.mobile-nav a.active {
-  color: var(--lavender-600);
-  font-weight: 700;
-}
-
-.mobile-nav .mini {
-  margin-top: auto;
-  font-size: 14px;
-  color: var(--muted);
-}
-.mobile-nav a::before {
-  content: "✦";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: var(--lavender-600);
-  opacity: 0.7;
-  transition: 0.3s ease;
-}
-
-.mobile-nav a:hover::before {
-  color: var(--gold);
-  opacity: 1;
-}
-/* hamburger duidelijk zichtbaar tijdens open */
-.hamburger[aria-expanded="true"] {
-  background: rgba(168,146,201,0.18);
-  box-shadow: 0 0 0 4px rgba(168,146,201,0.25);
-}
-
-/* achtergrond dimmer */
-#navOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  opacity: 0;
-  transition: opacity .25s ease;
-  z-index: 900;
-}
-
-#navOverlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-.section-header-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  color: var(--gold);
-  z-index: 10;
-}
-.section {
-  padding-left: 20px;
-  padding-right: 20px;
-  position: relative;
-  z-index:999;
-}
-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 20px;
-  height: 80%;
-  width: 4px;
-  background: linear-gradient(
-      to bottom,
-      rgba(168,146,201,0.4),
-      rgba(168,146,201,0.15),
-      rgba(168,146,201,0)
-  );
-  border-radius: 10px;
-}
-
-.container,
-.section-container {
-  width: 100%;
-  max-width: 1300px;       /* midden op desktop */
-  margin: 0 auto;
-  padding: 0 20px;     
-  z-index:-999;/* veilige ruimte links + rechts */
-}
-.card,
-.info-box,
-.contact-block,
-.feature-box {
-  border-radius: 12px;
-  padding: 20px;
-  margin: 0 auto;
-}
-  /* hero */
-  .hero{min-height:66vh;display:grid;align-items:center;padding:56px 0;position:relative;overflow:visible}
-  .hero-inner{display:flex;gap:28px;align-items:center;justify-content:space-between}
-  .hero-left{flex:1;min-width:0}
-  h1{font-size:44px;margin:0;color:var(--lavender);line-height:1.05}
-  .lead{margin-top:14px;color:var(--muted);max-width:720px;font-size:16.5px}
-  .cta-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700;transition:transform var(--transition),box-shadow var(--transition);box-shadow:0 9px 28px rgba(143,120,182,0.06)}
-  .btn-primary{background:var(--accent);color:white}
-  .btn-ghost{background:transparent;border:1px solid rgba(120,100,150,0.08);color:var(--text)}
-  .btn-primary:hover{transform: translateY(-4px);box-shadow:0 20px 48px rgba(143,120,182,0.12)}
-  .btn-ghost:hover{background:var(--lavender-soft)}
-
-  /* cards & sections */
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.78));border-radius:var(--radius);padding:20px;border: 1px solid rgba(168,146,201,0.10);
-  
-  /* nieuwe, diepere maar zachte "wellness" shadow */
-  box-shadow:
-      0 8px 24px rgba(80,56,92,0.09),
-      0 3px 10px rgba(168,146,201,0.05),
-      0 0 0 1px rgba(255,255,255,0.6) inset;
-
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-      0 16px 40px rgba(80,56,92,0.14),
-      0 4px 14px rgba(168,146,201,0.09),
-      0 0 0 1px rgba(255,255,255,0.7) inset;
-}
-    section{
-    padding:72px 0;
-    position: relative;
-}
-
-/* zachte elegante lijn tussen secties */
-section:not(:last-of-type)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 86%;
-  max-width: var(--max-width);
-  transform: translateX(-50%);
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(168, 146, 201, 0.25),
-    rgba(197, 154, 68, 0.22),
-    transparent
-  );
-  opacity: 0.6;
-} /* increased spacing between sections */
-    .grid{display:grid;gap:20px}
-    .muted{color:var(--muted)}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .features .card{min-height:170px;display:flex;flex-direction:column;gap:12px}
-    /* 🌙 Werkwijze-sectie met fadeende achtergrondbeelden */
-.features .card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  cursor: default;
-  padding: 32px;
-  border: 1px solid rgba(168,146,201,0.12);
-  box-shadow: 0 16px 40px rgba(70,50,90,0.08);
-}
-
-.features .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 48px rgba(168,146,201,0.18);
-}
-
-/* Basis achtergrondlagen */
-.features .card::before,
-.features .card::after,
-.features .card .bg3 {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  z-index: 0;
-  transition: opacity 1.2s ease-in-out;
-}
-
-/* Afbeeldingen (vervang gerust door eigen foto's) */
-.features .card::before {
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
-}
-.features .card::after {
-  background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80');
-}
-.features .card .bg3 {
-  background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80');
-}
-
-/* Fade-animatie op hover (achter elkaar) */
-.features .card:hover::before {
-  animation: fadeImg1 6s forwards;
-}
-.features .card:hover::after {
-  animation: fadeImg2 6s forwards;
-}
-.features .card:hover .bg3 {
-  animation: fadeImg3 6s forwards;
-}
-
-@keyframes fadeImg1 {
-  0% { opacity: 0; }
-  20% { opacity: 0.4; }
-  100% { opacity: 0; }
-}
-@keyframes fadeImg2 {
-  0%, 20% { opacity: 0; }
-  40% { opacity: 0.4; }
-  100% { opacity: 0; }
-}
-@keyframes fadeImg3 {
-  0%, 40% { opacity: 0; }
-  60%, 80% { opacity: 0.45; }
-  100% { opacity: 0; }
-}
-
-/* Zorg dat tekst altijd zichtbaar blijft */
-.features .card > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Zachte text glow */
-.features .card:hover h3 {
-  color: var(--lavender);
-  text-shadow: 0 0 8px rgba(168,146,201,0.3);
-}
-/* Verwijder eventuele rand of border van body en footer */
-
-/* Contact form sectie */
-.contact-form-section .contact-form-card {
-  max-width: 700px;       /* maakt de card groter */
-  margin: 0 auto;         /* centreert de card */
-  padding: 40px; 
-  text-align: center;         /* iets meer padding binnenin */
-}
-
-
-/* Submit button breder en gecentreerd */
-.contact-form .form-submit {
-  width: 100%;             /* vul de breedte */
-  padding: 16px;
-  font-size: 17px;
-  text-align: center;
-}
-
-.contact-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.contact-header {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 50px auto;
-}
-
-.icon-glow {
-  font-size: 32px;
-  color: var(--gold);
-  margin-bottom: 10px;
-  text-shadow: 0 0 12px rgba(197,154,68,0.35);
-}
-
-.contact-title {
-  font-size: 28px;
-  color: var(--lavender-600);
-  margin-bottom: 8px;
-}
-
-.contact-sub {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.contact-info,
-.contact-form {
-  padding: 32px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* zachte achtergrondglow */
-.contact-info::before,
-.contact-form::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at top right, rgba(168,146,201,0.12), transparent 70%);
-  z-index:0;
-}
-.contact-info > * , .contact-form > * { position:relative; z-index:1; }
-
-.contact-info-title,
-.contact-form-title {
-  font-size: 20px;
-  color: var(--lavender);
-  margin-bottom: 18px;
-}
-/* Center alle content in de contactsectie */
-.contact-info-only {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px 15px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-info-only .info-line {
-  display: flex;
-  align-items: center;     /* icon + tekst netjes in 1 lijn */
-  justify-content: center; /* hele lijn gecentreerd */
-  gap: 10px;               /* kleine ruimte tussen icon en tekst */
-}
-
-.contact-info-only .info-icon {
-  font-size: 20px;         /* mooi, niet te groot */
-}
-
-/* info lines */ 
-.info-line {
-  display: flex;
-  flex-direction: column;   /* icon boven, tekst eronder */
-  align-items: center;      /* alles in het midden */
-  justify-content: center;
-  text-align: center;
-  gap: 6px;
-}
-
-.info-icon {
-  font-size: 26px;  
-  color: var(--lavender-600);
-  margin: 0 auto;
-  display: block;
-}
-
-.info-label {
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.info-value {
-  color: var(--muted);
-}
-.info-label,
-.info-value {
-  text-align: center;
-  width: 100%;
-}
-
-/* form fields */
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-field span {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: var(--lavender-600);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(168,146,201,0.28);
-  font-size: 15px;
-  background: white;
-  transition: box-shadow .3s, border-color .3s;
-  text-align: center;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--lavender-600);
-  box-shadow: 0 0 0 6px rgba(168,146,201,0.15);
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-  width:100%;
-}
-
-/* buttons */
-.info-buttons {
-  margin-top: 25px;
-  display: flex;
-  gap: 12px;
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 10px;
-  padding: 14px;
-  font-size: 16px;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-
-.footer {
-  background: linear-gradient(to top, #8e44ad, #ffffff);
-  margin: 0; /* Verwijder marges */
-  padding: 20px; /* Optioneel: padding voor inhoud */
-  border: none; /* Zorg dat er geen borders zijn */
-  border-top: none; /* Geen rand bovenaan de footer */
-}
-    /* contact (no form) */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start}
-    .contact-card { display:flex;flex-direction:column;gap:12px;align-items:flex-start }
-
-    /* ---------------------- */
-/* 🗺️ Locatie Sectie */
-/* ---------------------- */
-
-.location-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.location-wrapper {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 30px;
-}
-
-.location-info,
-.location-map {
-  padding: 32px;
-  position: relative;
-}
-.method-section .icon-glow,
-.location-section .icon-glow {
-  display: block;
-  margin: 0 auto 12px auto; /* centreert en geeft ruimte onder het icoon */
-  font-size: 32px;
-}
-.method-section,
-.location-section,
-.contact-section {
-  text-align: center;
-}
-
-.method-card,
-.location-info {
-  margin: 0 auto;       /* cards centreren */
-}
-
-/* map placeholder */
-.map-placeholder {
-  width: 100%;
-  height: 300px;
-  border-radius: 16px;
-  background: rgba(168,146,201,0.12);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--muted);
-  font-style: italic;
-}
-
-/* Titles */
-.loc-title {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: var(--lavender-600);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
-  }
-  .socials {
-    justify-content: center;
-  }
-   .location-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .footer-column {
-    margin-bottom: 30px;
-  }
-}
-
-    /* socials */
-    .socials{display:flex;gap:12px}
-    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.9);text-decoration:none;color:var(--lavender-600);box-shadow:0 6px 18px rgba(120,100,150,0.04);transition:transform var(--transition)}
-    .socials a:hover{transform:translateY(-6px);box-shadow: 0 12px 28px rgba(120,100,150,0.1);}
-
-    /* floating shapes decor */
-    .float-shape{position:absolute;border-radius:50%;filter:blur(20px);opacity:0.8;transform:translate3d(0,0,0);pointer-events:none}
-    .float-1{width:220px;height:220px;left:-60px;top:6%;background:linear-gradient(135deg, rgba(168,146,201,0.18), rgba(197,154,68,0.06));animation:float 9s ease-in-out infinite}
-    .float-2{width:140px;height:140px;right:-60px;bottom:8%;background:linear-gradient(135deg, rgba(197,154,68,0.12), rgba(168,146,201,0.06));animation:float 11s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
-@media (min-width: 900px) {
-    .hamburger {
-        display: none !important;
-    }
-
-    nav.primary {
-        display: block !important;
-    }
-}
-@media (max-width: 900px) {
-    nav.primary {
-        display: none; /* desktop menu weg */
-    }
-
-    .hamburger {
-        display: flex; /* hamburger zichtbaar */
-    }
-
-    .nav-links .lang a {
-        display: none; /* menu dicht */
-        flex-direction: column;
-        width: 100%;
-        background:linear-gradient(to bottom, purple, rgba(128, 0, 128, 0));
-        padding: 8px 12px;
-        gap: 15px;
-        text-align: center;
-        border: 1px solid #ccc;
-    }
-
-    /* Wanneer menu open is */
-    .nav-links.open {
-        display: flex;
-    }
-
-    .nav-links .lang a:hover {
-        background: #ddd;
-    }
-}
-
-/* 🌸 Over mij Sectie */
-
-.about-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.section-title {
-  font-size: 28px;
-  color: var(--lavender-600);
-  margin-bottom: 12px;
-}
-
-.section-sub {
-  color: var(--muted);
-  margin-bottom: 40px;
-}
-
-.about-text {
-  color: var(--muted);
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-
-.about-highlights {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: center;
-}
-
-.highlight {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.hl-icon {
-  font-size: 28px;
-}
-
-.hl-title {
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.hl-desc {
-  color: var(--muted);
-}
-
-/* ---------------------- */
-/* ✨ Werkwijze Sectie */
-/* ---------------------- */
-
-.method-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-
-.center {
-  text-align: center;
-}
-
-.method-steps {
-  margin-top: 55px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.method-card {
-  padding: 28px;
-  text-align: center;
-  position: relative;
-}
-
-.step-number {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--lavender);
-  color: white;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 16px auto;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(168,146,201,0.25);
-}
-
-.step-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: var(--lavender-600);
-}
-
-.step-text {
-  color: var(--muted);
-  line-height: 1.6;
-}
-/* ✨ Footer */
-.site-footer {
-  background: linear-gradient(to bottom, rgba(128, 0, 128, 0), purple); /* paars naar transparant */
-  padding: 60px 20px 40px;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-
-}
-
-.footer-title {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: #fff;
-}
-
-.footer-subtitle {
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #fff;
-}
-
-.footer-text {
-  color: #fff;
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 8px;
-}
-
-.footer-links a {
-  color: #fff;
-  font-size: 15px;
-  text-decoration: none;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.footer-links a:hover {
-  color: #fff;
-  transform: translateX(4px);
-}
-
-/* Bottom footer */
-.footer-bottom {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* Responsive */
-
-@media (max-width: 1000px) {
-
-  .method-steps {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  .method-steps {
-    grid-template-columns: 1fr;
-  }
-}
-
-    /* whatsapp */
-    .whatsapp-btn{position:fixed;right:20px;bottom:20px;background:linear-gradient(180deg, #7e62a8, #6b4ba8);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer;box-shadow:0 14px 40px rgba(107, 75, 168, 0.16);z-index:90;transition:transform .18s;border: none; /* Verwijder eventuele rand */
-  outline: none; /* Verwijder outline bij focus */}
-    .whatsapp-btn:hover{transform:translateY(-6px)}
-    .whatsapp-svg{width:30px;height:30px;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12))}
-
-    /* responsive */
-    @media (max-width:1000px){ .features{grid-template-columns:repeat(2,1fr)} .hero-inner{flex-direction:column;align-items:flex-start} }
-  @media (max-width:600px){ 
-  .container{
-    padding:18px;
-  } 
-  .logo{
-    font-size:18px;
-  } 
-  .hero{
-    min-height:48vh
-  } 
-    .float-1,.float-2{display:none;
-  } 
-}
-
-    /* focus */
-    a:focus,button:focus,input:focus,textarea:focus{outline:none;box-shadow:0 0 0 8px rgba(168,146,201,0.12)}
-    /* Mobiel menu standaard verbergen */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    pointer-events: auto;
-}
-.nav-links.show {
-  display: flex;
-  position: absolute; /* of fixed, afhankelijk van je layout */
-  top: 70px; /* onder je header */
-  right: 0;
-  z-index: 9999;
-}
-
-/* Mobiel: menu als kolom tonen */
-@media (max-width: 900px) {
-    .nav-links {
-        display: none; /* menu dicht */
-        flex-direction: column;
-        width: 100%;
-        background:linear-gradient(to bottom, purple, rgba(128, 0, 128, 0));
-        padding: 20px;
-        gap: 15px;
-    }
-
-    /* Wanneer menu open is */
-    .nav-links.open {
-        display: flex;
-    }
-
-    /* Taal knoppen in mobiel menu */
-    .nav-links .lang a {
-        background: #eee;
-        border: 1px solid #ccc;
-        padding: 8px 12px;
-        border-radius: 4px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .nav-links .lang a:hover {
-        background: #ddd;
-    }
-}
-/* 🌸 Welkom – Professioneel Luxe Design */
-.welcome-section {
-  padding: 90px 0;
-  position: relative;
-}
-
-.welcome-header {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 60px auto;
-}
-
-.welcome-icon {
-  font-size: 32px;
-  color: var(--gold);
-  text-shadow: 0 0 14px rgba(197,154,68,0.35);
-  display: block;
-  margin-bottom: 8px;
-}
-
-.welcome-title {
-  font-size: 34px;
-  color: var(--lavender-600);
-  margin-bottom: 10px;
-}
-
-.welcome-sub {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-/* --- GRID --- */
-.welcome-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
-
-/* --- KAARTEN --- */
-.welcome-card {
-  background: linear-gradient(180deg,
-    rgba(255,255,255,0.92),
-    rgba(255,255,255,0.78)
-  );
-  border-radius: 18px;
-  padding: 32px;
-  text-align: center;
-  border: 1px solid rgba(168,146,201,0.14);
-
-  box-shadow:
-    0 10px 28px rgba(80,56,92,0.08),
-    0 2px 8px rgba(168,146,201,0.05),
-    0 0 0 1px rgba(255,255,255,0.6) inset;
-
-  transition: transform .35s ease, box-shadow .35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.welcome-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 18px 42px rgba(80,56,92,0.16),
-    0 3px 14px rgba(168,146,201,0.10),
-    0 0 0 1px rgba(255,255,255,0.7) inset;
-}
-
-/* zachte glow */
-.welcome-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right,
-    rgba(168,146,201,0.14),
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity .45s ease;
-}
-
-.welcome-card:hover::before {
-  opacity: 1;
-}
-
-/* icon */
-.wc-icon {
-  font-size: 38px;
-  margin-bottom: 14px;
-  color: var(--lavender-600);
-  text-shadow: 0 0 10px rgba(168,146,201,0.25);
-}
-
-/* titles */
-.welcome-card h3 {
-  font-size: 20px;
-  color: var(--lavender-600);
-  margin-bottom: 10px;
-}
-
-/* text */
-.welcome-card p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-  .welcome-grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 901px) {
-  #mobileNav {
-    display: none !important;   /* altijd verbergen op desktop */
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  #navOverlay {
-    display: none !important;   /* overlay ook verbergen */
-  }
-
-  .hamburger {
-    display: none !important;   /* hamburger verbergen */
-  }
-}
-/* Responsive (Mobiel) */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #1e1e1e;
-    width: 220px;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-    display: none;
-
-    /* FIXES ↓ */
-    z-index: 9999;          /* menu komt boven alles */
-    pointer-events: auto;   /* klikken toegestaan */
-  }
-
-  .hamburger {
-    display: flex;
-    z-index: 10000;         /* hamburger blijft klikbaar */
-  }
-
-  .nav-links.show {
-    display: flex;
-    z-index: 10000;
-  }
-}
-
-@media (max-width: 768px) {
-  .container,
-  .section-container,
-  section {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .card,
-  .info-box,
-  .contact-block,
-  .feature-box {
-    padding: 18px;
-  }
-}
-@media (max-width: 480px) {
-  .container,
-  .section-container,
-  section {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-}
-
-  </style>
+  <!-- Jouw Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-    <div class="welcome-header">
+<body>
+      <div class="welcome-header">
       <span class="welcome-icon"><img src="medium.hope.png"></span>
-      <h2 class="welcome-title">vanaf 1 januari 2026 zijn we online!</h2>
-     
+      <h2 class="welcome-title">vanaf 1 januari 2026 staan we online!</h2>
+  </div>
+
+<!--
+  <div class="preloader">
+    <div class="preloader-content">
+      <img src="medium.hope.png">
+      <h2 class="welcome-title">Welkom</h2>
+    </div>
+  </div>
+
+  <div class="float-shape float-1" aria-hidden="true"></div>
+  <div class="float-shape float-2" aria-hidden="true"></div>
+
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="mediumgold.png" height="80">
+    </a>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home">✦ Home</a></li>
+        <li><a href="#over" data-key="nav_about">✦ Over mij</a></li>
+        <li><a href="#werkwijze" data-key="nav_method">✦ Werkwijze</a></li>
+        <li><a href="#contact" data-key="nav_contact">✦ Contact</a></li>
+
+        <li class="lang-btn" data-lang="nl">
+          <a href="#">✦ NL <img src="https://flagcdn.com/nl.svg" width="30" alt="NL"></a>
+        </li>
+
+        <li class="lang-btn" data-lang="de">
+          <a href="#">✦ DE <img src="https://flagcdn.com/de.svg" width="30" alt="DE"></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="welcome-section" id="home">
+      <div class="container">
+
+        <div class="welcome-header">
+          <span class="welcome-icon">
+            <img src="medium.hope.png">
+          </span>
+          <h2 class="welcome-title" data-key="welcome_title">Welkom</h2>
+          <p class="welcome-sub" data-key="welcome_sub">
+            Fijn dat je er bent. Ik help je graag met helderheid, rust, inzichten en vertrouwen — op jouw pad, in jouw tempo.
+          </p>
+        </div>
+
+        <div class="welcome-grid">
+
+          <div class="welcome-card">
+            <div class="wc-icon">🔮</div>
+            <h3 data-key="reading_title">Reading</h3>
+            <p data-key="reading_desc">
+              Via videobellen ontvang je persoonlijke, intuïtieve inzichten die je helderheid, richting en geruststelling geven.
+            </p>
+          </div>
+
+          <div class="welcome-card">
+            <div class="wc-icon">📸</div>
+            <h3 data-key="photoreading_title">Fotoreading</h3>
+            <p data-key="photoreading_desc">
+              Via een foto voel ik jouw energie, persoonlijkheid en huidige processen — zuiver, liefdevol en zonder oordeel.
+            </p>
+          </div>
+
+          <div class="welcome-card">
+            <div class="wc-icon">✨</div>
+            <h3 data-key="coaching_title">Coaching</h3>
+            <p data-key="coaching_desc">
+              Online via videobellen bied ik intuïtieve en verdiepende begeleiding, zodat je met innerlijke rust en kracht je pad vervolgt.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="over" class="about-section container">
+      <div class="about-content">
+
+        <div class="icon-glow">✦</div>
+
+        <h2 class="section-title center" data-key="about_title">Over mij</h2>
+
+        <p class="about-text" data-key="about_text1">
+          Welkom, ik ben <strong>Giovanna</strong>. Sinds mijn jeugd voel ik de energie van mensen en situaties.
+          Wat begon als subtiele waarnemingen groeide uit tot een roeping: anderen helpen met liefde en zuivere intentie.
+          Ik werk respectvol, zonder oordeel, met aandacht voor jouw unieke pad.
+        </p>
+
+        <p class="about-text" data-key="about_text2">
+          Medium.Hope staat voor licht, liefde en vertrouwen — een veilige ruimte om helderheid te vinden.
+          Mijn benadering is rustig, warm en afgestemd op jouw energie.
+          Ik creëer een omgeving waar ruimte is om te voelen, ontdekken en helen.
+          Niets hoeft geforceerd — alles mag ontstaan in jouw tempo.
+        </p>
+
+        <div class="about-highlights">
+
+          <div class="highlight">
+            <div class="hl-icon">🌿</div>
+            <div>
+              <div class="hl-title" data-key="highlight1_title">Zachte begeleiding</div>
+              <div class="hl-desc" data-key="highlight1_desc">
+                Een warme en veilige ruimte waarin jij volledig jezelf mag zijn.
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight">
+            <div class="hl-icon">✨</div>
+            <div>
+              <div class="hl-title" data-key="highlight2_title">Intuïtieve werkwijze</div>
+              <div class="hl-desc" data-key="highlight2_desc">
+                Ik luister niet alleen naar woorden, maar ook naar energie.
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight">
+            <div class="hl-icon">💛</div>
+            <div>
+              <div class="hl-title" data-key="highlight3_title">Persoonlijke aandacht</div>
+              <div class="hl-desc" data-key="highlight3_desc">
+                Alle sessies worden volledig afgestemd op jouw behoeften.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="werkwijze" class="method-section">
+      <div class="icon-glow">✦</div>
+
+      <h2 class="section-title center" data-key="method_title">Mijn werkwijze</h2>
+      <p class="section-sub center" data-key="method_sub">
+        Elke sessie volgt een warme, heldere en intuïtieve opbouw.
+      </p>
+
+      <div class="method-steps">
+
+        <div class="method-card card">
+          <div class="step-number">1</div>
+          <h3 class="step-title" data-key="step1_title">Kennismaking</h3>
+          <p class="step-text" data-key="step1_text">
+            We starten met een rustige kennismaking waarin jij jouw verhaal mag delen.
+            Ik stem af op jouw energie en voel mee wat er speelt.
+          </p>
+        </div>
+
+        <div class="method-card card">
+          <div class="step-number">2</div>
+          <h3 class="step-title" data-key="step2_title">Verdieping</h3>
+          <p class="step-text" data-key="step2_text">
+            Samen onderzoeken we wat je nodig hebt.
+            Dit kan inzicht, ontspanning, heling of juist praktische richting zijn.
+          </p>
+        </div>
+
+        <div class="method-card card">
+          <div class="step-number">3</div>
+          <h3 class="step-title" data-key="step3_title">Intuïtieve begeleiding</h3>
+          <p class="step-text" data-key="step3_text">
+            Ik gebruik intuïtieve technieken en afgestemde begeleiding
+            om jou opnieuw te verbinden met jouw innerlijke wijsheid.
+          </p>
+        </div>
+
+        <div class="method-card card">
+          <div class="step-number">4</div>
+          <h3 class="step-title" data-key="step4_title">Afronding & Inzichten</h3>
+          <p class="step-text" data-key="step4_text">
+            We sluiten rustig af met ruimte voor vragen, inzichten en eventuele vervolgstappen.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="contact-header">
+        <div class="icon-glow">✦</div>
+        <h2 class="contact-title" data-key="contact_title">Neem gerust contact op</h2>
+        <p class="contact-sub" data-key="contact_sub">
+          Met warmte, zorg en professionaliteit beantwoord ik je bericht binnen 48 uur.
+        </p>
+      </div>
+
+      <div class="contact-info-only card">
+
+        <h3 class="contact-info-title" data-key="contact_info_title">Contactgegevens</h3>
+
+        <div class="info-line">
+          <div class="info-icon">📧</div>
+          <div>
+            <div class="info-label">E-mail</div>
+            <a class="info-value" href="mailto:carolina-58@hotmail.com">carolina-58@hotmail.com</a>
+          </div>
+        </div>
+
+        <div class="info-line">
+          <div class="info-icon">📍</div>
+          <div>
+            <div class="info-label" data-key="contact_location_label">Locatie</div>
+            <div class="info-value" data-key="contact_location_value">Papendrecht</div>
+          </div>
+        </div>
+
+        <div class="info-line">
+          <div class="info-icon">💬</div>
+          <div>
+            <div class="info-label" data-key="contact_response_label">Reactietijd</div>
+            <div class="info-value" data-key="contact_response_value">Binnen 24–48 uur</div>
+          </div>
+        </div>
+
+        <div style="height:20px"></div>
+
+        <div style="font-weight:600;margin-bottom:6px" data-key="contact_practical_title">Praktische info</div>
+        <div class="muted" data-key="contact_practical_text">
+          Consulten mogelijk online of in persoon. A.U.B. met whatsapp contacten via de knop rechtsonder, niet bellen. Je ontvangt binnen 48 uur reactie.
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div style="font-weight:600" data-key="contact_session_title">Sessie-opties</div>
+        <div class="muted" data-key="contact_session_text">
+          30 of 60 minuten — online of live
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact-form" class="contact-form-section container">
+      <div class="contact-header">
+        <div class="icon-glow">✦</div>
+        <h2 class="contact-title" data-key="contact_form_title">Stel gerust je vraag</h2>
+        <p class="contact-sub" data-key="contact_form_sub">
+          Je bericht wordt met liefde, discretie en zorg behandeld.
+        </p>
+      </div>
+
+      <div class="card contact-form-card">
+        <form action="https://formspree.io/f/xgvgzaew" method="POST" enctype="multipart/form-data">
+          <label>
+            <span data-key="contact_form_email">e-mail adres:</span>
+            <input type="email" name="email">
+          </label>
+
+          <label>
+            <span data-key="contact_form_question">stel vraag:</span>
+            <input type="text" name="type"> 
+          </label>
+
+          <button type="submit" data-key="contact_form_button">Verstuur</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="location-section">
+    <div class="icon-glow">✦</div>
+    <h2 class="section-title center" data-key="location_title">Locatie</h2>
+    <p class="section-sub center" data-key="location_sub">
+      Je bent welkom op mijn rustige praktijklocatie in Papendrecht.
+    </p>
+
+    <div class="location-wrapper">
+
+      <div class="location-info card">
+
+        <h3 class="loc-title" data-key="location_address_title">Adres</h3>
+
+        <div class="info-line">
+          <div class="info-icon">📍</div>
+          <div class="info-text-wrapper">
+            <div class="info-label" data-key="location_space_label">Praktijkruimte</div>
+            <div class="info-value" data-key="location_space_value">Papendrecht, Nederland</div>
+          </div>
+        </div>
+
+        <div class="info-line">
+          <div class="info-icon">🕒</div>
+          <div class="info-text-wrapper">
+            <div class="info-label" data-key="location_hours_label">Openingstijden</div>
+            <div class="info-value" data-key="location_hours_value">Op afspraak</div>
+          </div>
+        </div>
+
+        <div class="info-line">
+          <div class="info-icon">🚗</div>
+          <div class="info-text-wrapper">
+            <div class="info-label" data-key="location_access_label">Bereikbaarheid</div>
+            <div class="info-value" data-key="location_access_value">
+              Gratis parkeren & goed bereikbaar met OV
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="location-map card">
+        <div class="map-placeholder">
+          <iframe 
+            src="https://www.google.com/maps?q=Papendrecht&output=embed"
+            loading="lazy"
+            style="width:100%;height:260px;border:0;border-radius:12px;
+            box-shadow:0 10px 30px rgba(80,56,92,0.06)">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <div class="footer-column">
+        <h3 class="footer-title">
+          Medium.Hope <img src="mediumgold.png" height="100">
+        </h3>
+        <p class="footer-text" data-key="footer_about_text">
+          Helderheid, vertrouwen en warme begeleiding.
+          Ontdek je innerlijke rust en laat je leiden door intuïtieve inzichten.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-subtitle" data-key="footer_nav_title">Navigatie</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#over" data-key="footer_about">Over mij</a></li>
+          <li><a href="#werkwijze" data-key="footer_method">Werkwijze</a></li>
+          <li><a href="#contact" data-key="footer_contact_nav">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-subtitle" data-key="footer_contact_nav">Contact</h3>
+        <p class="footer-text" data-key="footer_location">Papendrecht, Nederland</p>
+        <p class="footer-text">
+          📧 <a href="mailto:carolina-58@hotmail.com">carolina-58@hotmail.com</a>
+        </p>
+        <p class="footer-text" data-key="footer_response">⏱️ Reactietijd: 24–48 uur</p>
+
+        <div class="socials">
+          <a href="https://www.tiktok.com/@medium.hope?_r=1&_t=ZG-91YortauDT6" class="social-link">
+            <i class="fab fa-tiktok"></i> tiktok
+          </a>
+        </div>
+      </div>
+
     </div>
 
+    <div class="footer-bottom" data-key="footer_copyright">
+      © 2025 Medium.Hope — Alle rechten voorbehouden
+    </div>
+  </footer>
+
+  <button class="whatsapp-btn" id="whatsappBtn" aria-label="WhatsApp">
+    <svg class="whatsapp-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#FFFFFF"
+        d="M256 0C114.6 0 0 114.6 0 256c0 45.4 11.9 89.4 34.6 128.1L0 512l132.5-33.5C172.3 498.3 214.3 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0zM256 470c-38.6 0-76.4-10.4-109.3-30l-7.8-4.6-78.7 20 21-81.3-5-7.8C56 329.7 44 293.9 44 256 44 138.5 138.5 44 256 44s212 94.5 212 212-94.5 214-212 214zM375 323.2c-6.5-3.2-38.3-19.3-44.2-21.5s-10.3-3.2-14.7 3.2c-4.4 6.5-17.1 21.5-20.9 25.9s-7.7 4.8-14.1 1.6c-38.3-19.3-63.4-34.6-88.3-77.3-6.5-11.3 6.5-10.5 18.6-34.6 2.1-4.8 1-8.9-.5-12.1-1.6-3.2-14.7-35.6-20.2-48.9-5.3-12.6-10.7-10.8-14.7-11-3.7-.2-8.1-.2-12.5-.2-4.4 0-11.7 1.6-17.8 8.1s-23.4 22.9-23.4 55.8c0 33 24 64.6 27.4 69.1 3.2 4.5 47.3 72.3 115.1 101.6 42.7 18.4 59.4 20 80.7 16.8 12.9-2.1 38.3-15.6 43.7-30.7 5.5-15.1 5.5-28 3.9-30.7-1.6-2.9-5.9-4.7-12.5-7.9z"/>
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
+-->
 </body>
 </html>
+
+
 
 
 
