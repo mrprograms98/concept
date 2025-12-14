@@ -762,21 +762,21 @@ body{
   opacity: 1;
 }
 
-  footer {
-      margin: 0; /* Verwijder marges */
-      border-top: none; /* Geen rand bovenaan de footer */
-      background: linear-gradient(to bottom, rgba(128, 0, 128, 0), purple); /* paars naar transparant */
-      padding: 60px 20px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 40px;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
+footer {
+  margin: 0; /* Verwijder marges */
+  border-top: none; /* Geen rand bovenaan de footer */
+  background: linear-gradient(to bottom, rgba(128, 0, 128, 0), purple); /* paars naar transparant */
+  padding: 60px 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 
 .footer-title {
   font-size: 22px;
@@ -1087,6 +1087,7 @@ footer::after {
   }
 
 }
+
 
 
 
